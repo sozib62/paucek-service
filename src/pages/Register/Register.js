@@ -82,10 +82,10 @@ const Register = () => {
                             </label>
                             <input type="password" name='password' placeholder="password" required className="input input-bordered" />
                             <label>
-                                <input onClick={handleAccept} type="checkbox" name="" id="" /> Accept Trams And Condition
+                                <input onClick={handleAccept} type="checkbox" name="" id="" /> Accept Terms And Condition
                             </label>
                             <label className="label">
-                                <p>Have An Account Go<Link to='/login' className="label-text-alt link link-hover">Login</Link></p>
+                                <p>Have An Account Go<Link to='/login' className="label-text-alt link link-hover text-lg text-blue-600">Login</Link></p>
                             </label>
                         </div>
                         <div className='text-red-400'>

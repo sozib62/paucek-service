@@ -3,7 +3,7 @@ import React from 'react';
 const DisplayService = ({ service }) => {
 
     const { serviceName, img, price, description } = service;
-    console.log(service);
+    // console.log(service);
 
     return (
         <div>
