@@ -26,7 +26,11 @@ const Navbar = () => {
                         <li>
                             {
                                 user && user.email ?
-                                    <button onClick={handleLogOut}>logout</button>
+                                    <>
+                                        <Link to='/reviews'>My Reviews</Link>
+                                        <Link to='/services'>Add Service</Link>
+                                        <button onClick={handleLogOut}>logout</button>
+                                    </>
                                     :
                                     <Link to='/login'>Login</Link>
                             }

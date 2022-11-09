@@ -2,10 +2,11 @@ import React from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './App.css';
 import Main from './Layout/Main/Main';
+import AddServices from './pages/AddServices/AddServices';
 import Blog from './pages/Blog/Blog';
 import Home from './pages/Home/Home';
 import Login from './pages/Login/Login';
-import Logout from './pages/Logout/Logout';
+import MyReviews from './pages/MyReviews/MyReviews';
 import Register from './pages/Register/Register';
 import ShowAllService from './pages/ShowAllService/ShowAllService';
 
@@ -30,6 +31,14 @@ function App() {
           element: <Blog></Blog>
         },
         {
+          path: '/reviews',
+          element: <MyReviews></MyReviews>
+        },
+        {
+          path: '/service',
+          element: <AddServices></AddServices>
+        },
+        {
           path: '/login',
           element: <Login></Login>
         },
@@ -37,10 +46,7 @@ function App() {
           path: '/Register',
           element: <Register></Register>
         },
-        {
-          path: '/logout',
-          element: <Logout></Logout>
-        }
+
       ]
     }
   ])
