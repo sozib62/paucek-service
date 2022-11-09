@@ -1,13 +1,15 @@
 import React from 'react';
 import Navbar from './Navbar/Navbar';
-
+import img from '../../assets/banner00.jpeg'
 
 
 const Header = () => {
     return (
         <div className='mx-20'>
-            <Navbar></Navbar>
 
+            <div>
+                <img className='w-full' src={img} alt="" />
+            </div>
 
         </div>
     );
