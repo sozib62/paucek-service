@@ -4,6 +4,7 @@ import './App.css';
 import Main from './Layout/Main/Main';
 import Blog from './pages/Blog/Blog';
 import Home from './pages/Home/Home';
+import ShowAllService from './pages/ShowAllService/ShowAllService';
 
 function App() {
 
@@ -15,6 +16,11 @@ function App() {
         {
           path: '/',
           element: <Home></Home>
+        },
+        {
+          path: '/services',
+          element: <ShowAllService></ShowAllService>,
+          loader: () => fetch('http://localhost:5000/services')
         },
         {
           path: '/blog',

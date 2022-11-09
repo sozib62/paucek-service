@@ -1,5 +1,4 @@
 import React from 'react';
-import Navbar from './Navbar/Navbar';
 import img from '../../assets/banner00.jpeg'
 
 
