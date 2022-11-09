@@ -9,6 +9,7 @@ import Login from './pages/Login/Login';
 import MyReviews from './pages/MyReviews/MyReviews';
 import Register from './pages/Register/Register';
 import ShowAllService from './pages/ShowAllService/ShowAllService';
+import ShowDetails from './pages/ShowDetails/ShowDetails';
 
 function App() {
 
@@ -27,6 +28,11 @@ function App() {
           loader: () => fetch('http://localhost:5000/services')
         },
         {
+          path: '/services/:id',
+          element: <ShowDetails></ShowDetails>,
+          loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`)
+        },
+        {
           path: '/blog',
           element: <Blog></Blog>
         },
@@ -35,7 +41,7 @@ function App() {
           element: <MyReviews></MyReviews>
         },
         {
-          path: '/service',
+          path: '/addService',
           element: <AddServices></AddServices>
         },
         {

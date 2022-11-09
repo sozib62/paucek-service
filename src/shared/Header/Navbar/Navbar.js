@@ -28,7 +28,7 @@ const Navbar = () => {
                                 user && user.email ?
                                     <>
                                         <Link to='/reviews'>My Reviews</Link>
-                                        <Link to='/services'>Add Service</Link>
+                                        <Link to='/addService'>Add Service</Link>
                                         <button onClick={handleLogOut}>logout</button>
                                     </>
                                     :

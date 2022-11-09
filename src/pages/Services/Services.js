@@ -17,7 +17,7 @@ const Services = () => {
         <div className=' mt-40'>
             <h1 className='text-5xl text-center font-bold text-amber-600'>MY SERVICES</h1>
 
-            <div className='grid grid-cols-3 mt-5'>
+            <div className='grid grid-cols-3 gap-10 mt-5 '>
                 {
                     services.map(service => <DisplayService
                         key={service._id}
@@ -26,7 +26,7 @@ const Services = () => {
                 }
             </div>
             <div className='text-center mt-10'>
-                <Link to='/services'><button className="btn btn-active btn-primary ">Show More</button></Link>
+                <Link to='/services'><button className="btn btn-active btn-primary px-16 py-4">SEE ALL</button></Link>
             </div>
 
         </div>
