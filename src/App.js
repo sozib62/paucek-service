@@ -4,6 +4,7 @@ import './App.css';
 import Main from './Layout/Main/Main';
 import Blog from './pages/Blog/Blog';
 import Home from './pages/Home/Home';
+import Register from './pages/Register/Register';
 import ShowAllService from './pages/ShowAllService/ShowAllService';
 
 function App() {
@@ -25,7 +26,11 @@ function App() {
         {
           path: '/blog',
           element: <Blog></Blog>
-        }
+        },
+        {
+          path: '/Register',
+          element: <Register></Register>
+        },
       ]
     }
   ])
