@@ -2,6 +2,7 @@ import React from 'react';
 import { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 import ReviewTable from './ReviewTable/ReviewTable';
+
 const MyReviews = () => {
 
     const { user } = useContext(AuthContext)
@@ -13,32 +14,28 @@ const MyReviews = () => {
             .then(data => setReviews(data))
     }, [user.email])
 
+    const handleDelete = id => {
+        const aa = window.confirm('are you sure delete this item')
+        if (aa) {
+            fetch(`http://localhost:5000/reviews/${id}`, {
+                method: 'DELETE'
+            })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data);
+                })
+        }
+    }
+
     return (
-        <div className=''>
-
-            <div className="overflow-x-auto w-full">
-                <table className="table w-full">
-
-                    <thead>
-                        <tr className='grid grid-cols-3 w-full'>
-                            <th>Name</th>
-                            <th>Review Message</th>
-                            <th>Update</th>
-                        </tr>
-                    </thead>
-                    <tbody className='w-full'>
-                        {
-                            reviews.map(review => <ReviewTable
-                                key={review._id}
-                                review={review}
-                            ></ReviewTable>)
-                        }
-                    </tbody>
-                </table>
-            </div>
-
-
-
+        <div className='grid grid-cols-3'>
+            {
+                reviews.map(review => <ReviewTable
+                    key={review._id}
+                    review={review}
+                    handleDelete={handleDelete}
+                ></ReviewTable>)
+            }
         </div>
     );
 };

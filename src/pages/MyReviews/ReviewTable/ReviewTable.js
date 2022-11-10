@@ -1,28 +1,21 @@
 import React from 'react';
 
-const ReviewTable = ({ review }) => {
+const ReviewTable = ({ review, handleDelete }) => {
 
-    console.log(review);
-    const { message, reviewName, userName } = review
+    // console.log(review);
+    const { _id, message, userName, reviewName } = review;
+
 
     return (
         <div>
-            <div className="overflow-x-auto w-full">
-                <table className="table w-full">
-                    <tbody>
-                        <tr>
-                            <td>
-                                {reviewName}
-                            </td>
-                            <td>
-                                {message}
-                            </td>
-                            <th>
-                                <button className="btn btn-ghost">details</button>
-                            </th>
-                        </tr>
-                    </tbody>
-                </table>
+            <div className="card card-compact w-96 bg-base-100 shadow-xl">
+                <div className="card-body">
+                    <h2 className="card-title">{reviewName}</h2>
+                    <p>UserName: {userName}</p>
+                    <p>Review{message}</p>
+                    <button onClick={() => handleDelete(_id)} className='btn btn-ghost'>Delete Item</button>
+
+                </div>
             </div>
         </div>
     );
