@@ -1,15 +1,21 @@
 import { GoogleAuthProvider } from 'firebase/auth';
 import React, { useState } from 'react';
 import { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
+
 
 
 const Login = () => {
 
     const [error, setError] = useState('')
 
-    const { loginUser, providerLogin, } = useContext(AuthContext)
+    const { loginUser, providerLogin } = useContext(AuthContext);
+
+    // const navigate = useNavigate();
+    // const location = useLocation();
+
+    // const from = location.state?.from?.pathname || '/';
 
     const googleProvider = new GoogleAuthProvider()
 
@@ -35,6 +41,7 @@ const Login = () => {
                 console.log(user);
                 form.reset()
                 setError('')
+                // navigate(from, { replace: true })
             })
             .catch(error => {
                 console.error(error);
@@ -61,7 +68,7 @@ const Login = () => {
                             </label>
                             <input type="password" name='password' placeholder="password" required className="input input-bordered" />
                             <label className="label">
-                                <p>Can't account Go <Link to='/register' className="label-text-alt link link-hover text-lg text-blue-600"> Register</Link></p>
+                                <p>Can't account Go<Link to='/register' className="label-text-alt link link-hover">Register</Link></p>
                             </label>
                         </div>
                         <div className='text-red-400'>

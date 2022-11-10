@@ -7,7 +7,7 @@ const ShowAllService = () => {
     const services = useLoaderData();
 
     return (
-        <div className='grid grid-cols-3 gap-12'>
+        <div className='grid grid-cols-3 gap-10'>
             {
                 services.map(service => <DisplayAllService
                     key={service._id}
