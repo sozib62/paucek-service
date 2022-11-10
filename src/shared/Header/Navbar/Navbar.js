@@ -16,7 +16,7 @@ const Navbar = () => {
         <div>
             <div className="navbar bg-base-100 text-lg mx-auto">
                 <div className="flex-1">
-                    <a className="btn btn-ghost normal-case text-2xl"></a>
+                    <a className="btn btn-ghost text-blue-500 font-semibold text-3xl">Paucek Service</a>
                 </div>
                 <div className="flex-none">
                     <ul className="menu menu-horizontal p-0">

@@ -16,11 +16,6 @@ const MyReviews = () => {
     return (
         <div className=''>
 
-            if (reviews.length = 0) {
-                <h1>No Review Data Found</h1>
-            }
-
-
             <div className="overflow-x-auto w-full">
                 <table className="table w-full">
 
