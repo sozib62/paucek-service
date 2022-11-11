@@ -12,7 +12,7 @@ const ReviewTable = ({ review, handleDelete }) => {
                 <div className="card-body">
                     <h2 className="card-title">{reviewName}</h2>
                     <p>UserName: {userName}</p>
-                    <p>Review{message}</p>
+                    <p>Review: {message}</p>
                     <button onClick={() => handleDelete(_id)} className='btn btn-ghost'>Delete Item</button>
 
                 </div>

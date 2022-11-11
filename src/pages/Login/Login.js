@@ -12,9 +12,10 @@ const Login = () => {
 
     const { loginUser, providerLogin } = useContext(AuthContext);
 
-    // const navigate = useNavigate();
-    // const location = useLocation();
+    const location = useLocation();
+    const navigate = useNavigate();
 
+    // console.log(location.state);
     // const from = location.state?.from?.pathname || '/';
 
     const googleProvider = new GoogleAuthProvider()
@@ -24,6 +25,24 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
+
+                const currentUser = {
+                    email: user.email
+                }
+
+                fetch('https://assignment-11-server-site-nine.vercel.app/jwt', {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(currentUser)
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data);
+                        localStorage.setItem('token', data.token);
+                        // navigate(from, { replace: true })
+                    })
             })
             .catch(e => console.error(e))
     }
@@ -41,7 +60,26 @@ const Login = () => {
                 console.log(user);
                 form.reset()
                 setError('')
-                // navigate(from, { replace: true })
+
+                const currentUser = {
+                    email: user.email
+                }
+                console.log(currentUser);
+
+                fetch('https://assignment-11-server-site-nine.vercel.app/jwt', {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(currentUser)
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data);
+                        localStorage.setItem('token', data.token);
+                        // navigate(from, { replace: true })
+                    })
+
             })
             .catch(error => {
                 console.error(error);

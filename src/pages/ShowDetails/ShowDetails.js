@@ -24,7 +24,7 @@ const ShowDetails = () => {
             message,
         }
 
-        fetch('http://localhost:5000/reviews', {
+        fetch('https://assignment-11-server-site-nine.vercel.app/reviews', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
