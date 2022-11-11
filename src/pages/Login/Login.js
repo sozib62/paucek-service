@@ -16,7 +16,7 @@ const Login = () => {
     const navigate = useNavigate();
 
     // console.log(location.state);
-    // const from = location.state?.from?.pathname || '/';
+    const from = '/';
 
     const googleProvider = new GoogleAuthProvider()
 
@@ -41,7 +41,7 @@ const Login = () => {
                     .then(data => {
                         console.log(data);
                         localStorage.setItem('token', data.token);
-                        // navigate(from, { replace: true })
+                        navigate(from, { replace: true })
                     })
             })
             .catch(e => console.error(e))
@@ -77,7 +77,7 @@ const Login = () => {
                     .then(data => {
                         console.log(data);
                         localStorage.setItem('token', data.token);
-                        // navigate(from, { replace: true })
+                        navigate(from, { replace: true })
                     })
 
             })
