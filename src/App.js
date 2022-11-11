@@ -11,6 +11,7 @@ import Register from './pages/Register/Register';
 import ShowAllService from './pages/ShowAllService/ShowAllService';
 import ShowDetails from './pages/ShowDetails/ShowDetails';
 import PrivateRoute from './Routes/PriviteRoute/PriviteRoute';
+import Update from './Update/Update';
 
 function App() {
 
@@ -52,6 +53,10 @@ function App() {
         {
           path: '/Register',
           element: <Register></Register>
+        },
+        {
+          path: '/update/:id',
+          element: <Update></Update>
         },
 
       ]
